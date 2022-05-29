@@ -7,7 +7,8 @@ const Edit = () => {
   const [originData, setOriginData] = useState();
   const navigate = useNavigate();
   const { id } = useParams();
-  const diaryList = useParams(DiaryStateContext);
+
+  const diaryList = useContext(DiaryStateContext);
 
   useEffect(() => {
     if (diaryList.length >= 1) {
