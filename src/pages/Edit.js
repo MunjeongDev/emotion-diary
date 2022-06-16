@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
-import { DiaryEditor } from "../components/DiaryEditor";
+import DiaryEditor from "../components/DiaryEditor";
 
 const Edit = () => {
   const [originData, setOriginData] = useState();
