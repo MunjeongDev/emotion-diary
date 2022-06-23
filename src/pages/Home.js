@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { DiaryStateContext } from "../App";
+import { useContext, useEffect, useState } from 'react';
+import { DiaryStateContext } from '../App';
 
-import MyHeader from "./../components/MyHeader";
-import MyButton from "./../components/MyButton";
-import DiaryList from "./../components/DiaryList";
+import MyHeader from './../components/MyHeader';
+import MyButton from './../components/MyButton';
+import DiaryList from './../components/DiaryList';
 
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
@@ -24,7 +24,10 @@ const Home = () => {
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        0,
+        23,
+        59,
+        59
       ).getTime();
 
       setData(
@@ -52,8 +55,8 @@ const Home = () => {
     <div>
       <MyHeader
         headText={headText}
-        leftChild={<MyButton text={"<"} onClick={() => {}} />}
-        rightChild={<MyButton text={">"} onClick={() => {}} />}
+        leftChild={<MyButton text={'<'} onClick={() => {}} />}
+        rightChild={<MyButton text={'>'} onClick={() => {}} />}
       />
       <DiaryList diaryList={data} />
     </div>
